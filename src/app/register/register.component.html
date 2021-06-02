@@ -1,29 +1,35 @@
 <div class="container">
 
-    <h3 class="header">Registration Form</h3>
-    <form>
+    <h1 class="header">Registration Form</h1>
+    <div>
+    <form #registerForm= "ngForm" (ngSubmit)= "onRegister(registerForm.value)">
     
         <label>
-        <div class="form-group">
+            <div class="formGroup">
             Enter First Name:
-            <input class="form-control" type="text" placeholder="firstName" formControlName="firstname">
-
-        </div>
+            <input required type="text" ngModel name="firstName" placeholder="Enter first name"><br>
+            </div>
         </label>
 
-<label>
-        <div class="form-group">
+        <label>
+            <div class="formGroup">
             Enter Last Name:
-            <input class="form-control" type="text" placeholder="lastName" formControlName="lastname">
-            
-        </div>
+            <input required type="text" ngModel name="lastName" placeholder="Enter last name"><br> 
+
+            </div>           
+        </label>
+        <label>
+            <div class="formGroup">
+            Enter Address:
+            <input required type="text" ngModel name="Address" placeholder="Enter Address"><br> 
+
+            </div>           
         </label>
         
-
-        <div class="form-footer">
-            <button class="btn btn-link" routerLink="/dashboard" type="reset">Register</button>
+            <button class="btn action-btn" type="submit" [disabled]="!registerForm.valid">Register</button><br>
+            
             <input type="reset" value="Reset">
-        </div>
 </form>
-
+</div>
     </div>
+    <app-dashboard [List]="userList"> </app-dashboard>
