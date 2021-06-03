@@ -32,10 +32,10 @@ export class RegisterComponent implements OnInit {
     if(this.Index != undefined ){
       this.userList[this.Index]=value;
       this.Index=undefined;
-      alert('Your Data is Updated');
+      alert('Your Data is Updated!');
     }else{
       this.userList.push(value);
-      alert('Heyyyyyy  you got Registered ;)!');
+      alert('Entered Data is Registered!');
     }
     console.log(value);
     
