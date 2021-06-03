@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { resetFakeAsyncZone } from '@angular/core/testing';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -20,7 +21,8 @@ export class RegisterComponent implements OnInit {
      this.registerForm = fb.group({
       firstName : [null, Validators.required],
       lastName : [null, Validators.required],
-      Address : [null, Validators.required], 
+      email : [null, Validators.compose([Validators.required, Validators.email])],
+      number : ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],  
      })
   }
 
@@ -37,6 +39,7 @@ export class RegisterComponent implements OnInit {
       this.userList.push(value);
       alert('Entered Data is Registered!');
     }
+
     console.log(value);
     
     
@@ -47,7 +50,9 @@ export class RegisterComponent implements OnInit {
     this.registerForm.setValue({  
       firstName : this.userList[value].firstName, 
       lastName : this.userList[value].lastName,
-      Address : this.userList[value].Address, 
+      email: this.userList[value].email,
+      number: this.userList[value].number,
+
   });
   }
 }
