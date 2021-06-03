@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="container">
+   <div class="container">
 
     <h1 class="header">Registration Form</h1>
     <div>
@@ -9,22 +9,36 @@
             <div class="formGroup">
             Enter First Name:
             <input class="form-control" required type="text" placeholder="firstName" formControlName="firstName">
+            <div class="error" *ngIf="!registerForm.controls['firstName'].valid && registerForm.controls['firstName'].touched">* Enter valid First Name.</div>
             </div>
         </label><br>
 
         <label>
             <div class="formGroup">
             Enter Last Name:
-            <input class="form-control" type="text" placeholder="lastName" formControlName="lastName">
+            <input class="form-control" required type="text" placeholder="lastName" formControlName="lastName">
+            <div class="error" *ngIf="!registerForm.controls['firstName'].valid && registerForm.controls['lastName'].touched">* Enter valid Last Name.</div>
 
             </div>          
         </label><br>
         <label>
             <div class="formGroup">
-            Enter your Address:
-            <input class="form-control" type="text" placeholder="Address" formControlName="Address"> 
+            Enter your Email:
+            <input class="form-control" required
+            type="text" placeholder="email" formControlName="email"> 
+            <div class="error" *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">* Enter valid Email.</div>
 
+            
             </div>           
+        </label><br>
+        <label>
+            <div class="formGroup">
+                Enter Phone Number:
+                <input class="form-control" required
+                type="number" placeholder="number" formControlName="number"> 
+                <div class="error" *ngIf="!registerForm.controls['number'].valid && registerForm.controls['number'].touched">* Enter 10 digit Number.</div>
+            </div>   
+
         </label><br>
         <div class="btn-container">
             <button class="btn action-btn" type="submit" [disabled]="!registerForm.valid">Register</button><br>

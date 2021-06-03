@@ -14,10 +14,13 @@
     width: 178vw;
     border-radius: 25px;
     font-style: normal;
-    margin-top: 90px ;
+    margin-top: 70px ;
 }
 input{
     padding: 8px 8px;
+}
+.ng-invalid.ng-touched {
+    border-color: red;
 }
 .btn{
 
