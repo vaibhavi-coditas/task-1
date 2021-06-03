@@ -1,0 +1,33 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    min-height: 300px;
+}
+
+.container{
+    background-color: rgb(253, 247, 247);
+    box-shadow: 6px 14px rgb(85, 82, 82);
+    border-radius: 25px;
+    border: 2px solid rgb(199, 161, 168);
+    padding: 24px;
+    margin: 8px;
+    width: 178vw;
+    border-radius: 25px;
+    font-style: oblique;
+    margin-top: 90px ;
+}
+input{
+    padding: 8px 8px;
+}
+.btn{
+
+    padding: 6px;
+    margin-right: 10px;
+    border-radius: 8px;
+    font-style: oblique;
+
+}
+.btn-container{
+    display: flex;
+
+}

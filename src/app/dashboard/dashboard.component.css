@@ -1,0 +1,32 @@
+
+.card{
+    background-color: rgb(253, 247, 247);
+    box-shadow: 6px 14px rgb(85, 82, 82);
+    border-radius: 25px;
+    border: 2px solid rgb(199, 161, 168);
+    padding: 25px;
+    width: 67vw;
+    min-height: 389px;
+    margin-top: 90px;
+    font-style: oblique;
+    margin-right: 110px;
+    margin-left: 45px;
+
+}
+.label{
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    text-align: left;
+
+}
+
+button{
+    margin-right: 20px;
+    border-radius: 8px;
+    padding: 4px;
+    font-style: ob;
+}
+

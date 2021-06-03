@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -8,7 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   @Input()  List : any = [];
-  
+
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
+  }
   constructor() { }
 
   ngOnInit(): void {
@@ -21,9 +26,14 @@ export class DashboardComponent implements OnInit {
     }
   }
   onEdit(user:any ){
-    var index = this.List.indexOf(3452);
-    if(index !== -1){
-      this.List[index]=1010;
+    this.List.forEach((List : any , i : any) => {
+       if (List == user) 
+       {this.List[i] = user;
+        this.newItemEvent.emit(i);
+      
+      }
+
+      });
     }
   }
-}
+

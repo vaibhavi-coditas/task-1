@@ -1,35 +1,42 @@
-<div class="container">
+<div class="card">
+  <div class="container">
 
     <h1 class="header">Registration Form</h1>
     <div>
-    <form #registerForm= "ngForm" (ngSubmit)= "onRegister(registerForm.value)">
+        <form [formGroup]="registerForm" class="form" (ngSubmit)="onRegister(registerForm.value)">
     
         <label>
             <div class="formGroup">
             Enter First Name:
-            <input required type="text" ngModel name="firstName" placeholder="Enter first name"><br>
+            <input class="form-control" required type="text" placeholder="firstName" formControlName="firstName">
             </div>
-        </label>
+        </label><br>
 
         <label>
             <div class="formGroup">
             Enter Last Name:
-            <input required type="text" ngModel name="lastName" placeholder="Enter last name"><br> 
+            <input class="form-control" type="text" placeholder="lastName" formControlName="lastName">
 
-            </div>           
-        </label>
+            </div>          
+        </label><br>
         <label>
             <div class="formGroup">
-            Enter Address:
-            <input required type="text" ngModel name="Address" placeholder="Enter Address"><br> 
+            Enter your Address:
+            <input class="form-control" type="text" placeholder="Address" formControlName="Address"> 
 
             </div>           
-        </label>
-        
+        </label><br>
+        <div class="btn-container">
             <button class="btn action-btn" type="submit" [disabled]="!registerForm.valid">Register</button><br>
-            
-            <input type="reset" value="Reset">
-</form>
-</div>
+        
+            <button type ="reset" class="btn action-btn"> Reset </button>
+            </div>
+        </form>
+      </div>
     </div>
-    <app-dashboard [List]="userList"> </app-dashboard>
+
+    <div>
+       <app-dashboard [List]="userList" (newItemEvent)="addItem($event)"> </app-dashboard>
+    </div>
+
+</div>
